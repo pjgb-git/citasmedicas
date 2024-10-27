@@ -11,26 +11,30 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('consultorios', function (Blueprint $table) {
+        Schema::create('doctors', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('ubicacion');
-            $table->string('capacidad');
-            $table->string('telefono')->nullable();
+            $table->string('nombres'); 
+            $table->string('apellidos'); 
+            $table->string('telefono');
+            $table->string('licencia_medica');
             $table->string('especialidad');
-            $table->string('estado');
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')-> references('id')->on('users')->onDelete('cascade');
+            
+
+            
+            
 
             $table->timestamps();
         });
     }
-    
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('consultorios');
+        Schema::dropIfExists('doctors');
     }
 };

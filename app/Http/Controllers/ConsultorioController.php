@@ -12,7 +12,8 @@ class ConsultorioController extends Controller
      */
     public function index()
     {
-        //
+        $consultorios = Consultorio::all();
+        return view('admin.consultorios.index', compact('consultorios'));
     }
 
     /**
@@ -20,7 +21,7 @@ class ConsultorioController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.consultorios.create');
     }
 
     /**
@@ -28,38 +29,87 @@ class ConsultorioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$datos =request()->all();
+        //return response()->json($datos);
+        $request->validate([
+            'nombre' => 'required',
+            'ubicacion' => 'required',
+            'capacidad' => 'required',
+                       
+            'estado' => 'required',
+            
+       ]);
+       Consultorio::create($request->all());
+
+       return redirect()->route('admin.consultorios.index')
+        
+        ->with('mensaje', 'Se registró al consultorio') 
+        ->with('icono', 'success'); 
+        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Consultorio $consultorio)
+    public function show($id)
     {
-        //
+        $consultorio = Consultorio::findOrFail($id);
+        return view('admin.consultorios.show',compact('consultorio'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Consultorio $consultorio)
+    public function edit($id)
     {
-        //
+        $consultorio = Consultorio::findOrFail($id);
+        return view('admin.consultorios.edit',compact('consultorio'));
     }
+
+    
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Consultorio $consultorio)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $request->validate([
+            'nombre' => 'required',
+            'ubicacion' => 'required',
+            'capacidad' => 'required',
+                       
+            'estado' => 'required',
+            
+       ]);
+       $consultorio = Consultorio::find($id);
+       $consultorio->update($request->all());
+        return redirect()->route('admin.consultorios.index')
+        
+       ->with('mensaje', 'Se registró al consultorio') 
+       ->with('icono', 'success'); 
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Consultorio $consultorio)
-    {
-        //
-    }
+        public function confirmDelete($id){
+        
+            $consultorio = Consultorio::FindOrFail($id);
+            
+            return view('admin.consultorios.delete',compact('consultorio'));  
+    
+        }
+    
+        public function destroy($id){
+    
+            $consultorio = Consultorio::find($id);
+    
+              
+    
+            $consultorio->delete();
+            
+            return redirect()->route('admin.consultorios.index')
+            
+            ->with('mensaje', 'Se eliminó al consultorio') 
+            ->with('icono', 'success'); 
+            
+        }
+    
 }
