@@ -37,6 +37,8 @@
       
       </div>
       </div>
+
+      
       <div class="col-lg-3 col-4">
       <div class="small-box bg-warning">
       <div class="inner">
@@ -66,6 +68,23 @@
       
       </div>
       </div>
+      
+
+      <div class="col-lg-3 col-6">
+      <div class="small-box bg-info">
+      <div class="inner">
+        <h3>{{$total_doctores}}</h3>
+        <p>Doctores</p>
+      </div>
+      <div class="icon">
+        <i class "ion ion-bag" style="color:white"><i class="fas bi bi-person-plus"></i></i>        
+      </div>
+      <a href="{{url('admin/doctores')}}" class="small-box-footer">Más información <i class="fas bi bi-people-fill"></i></a>
+      
+      </div>
+      </div>
+  
+  
   
   </div>
 @endsection
