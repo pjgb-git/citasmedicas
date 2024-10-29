@@ -50,7 +50,7 @@ class SecretariaController extends Controller
         $secretaria->nombres = $request->nombres;
         $secretaria->apellidos = $request->apellidos;
         $secretaria->ci = $request->ci;
-        $secretaria->celular = $request->ci;
+        $secretaria->celular = $request->celular;
         $secretaria->fecha_nacimiento = $request->fecha_nacimiento;
         $secretaria->direccion = $request->direccion;
         $secretaria->save();
