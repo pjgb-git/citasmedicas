@@ -16,6 +16,8 @@ class SecretariaController extends Controller
         
         $secretarias = Secretaria::with('user')->get();
         return view('admin.secretarias.index',compact('secretarias'));
+
+        
     }
 
     public function create(){

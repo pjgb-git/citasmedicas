@@ -7,6 +7,7 @@ use App\Models\Secretaria;
 use App\Models\Consultorio;
 use App\Models\Doctor;
 use App\Models\User;
+use App\Models\Horario;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller

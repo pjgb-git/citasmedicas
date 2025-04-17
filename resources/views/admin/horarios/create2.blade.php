@@ -44,8 +44,8 @@
                                 <div class="col-md-4">
                                     <div class="form group">
                                         <label for="">Hora Final</label><b>*</b>
-                                        <input type="time" value="{{old('hora_final')}}" name="hora_final" class="form-control" required>
-                                        @error('hora_final')
+                                        <input type="time" value="{{old('hora_fin')}}" name="hora_fin" class="form-control" required>
+                                        @error('hora_fin')
                                         <small style="color=red">{{$message}}</small>
                                         @enderror
                                     </div>
@@ -53,7 +53,7 @@
                                                  
                             </div> 
                             
-                     <hr>       
+                           <br>     
                             
                 <div class="row">
                     <div class="col-md-6">
@@ -84,7 +84,7 @@
 
                                 </div>
 
-                                <hr><hr>
+                                <br><hr>
                                   
                                         <div class="row">
                                 <div class="col-md-12">

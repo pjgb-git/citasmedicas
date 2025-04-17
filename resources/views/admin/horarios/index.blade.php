@@ -26,12 +26,13 @@
     
       <tr>
         <td style="text-align:center"><b>N°</b></td>
-        <td style="text-align:center"><b>Nombre y Apellido</b></td>
-        <td style="text-align:center"><b>Teléfono</b></td>
-        <td style="text-align:center"><b>licencia_medica</b></td>
-        
+        <td style="text-align:center"><b>Doctor</b></td>
         <td style="text-align:center"><b>Especialidad</b></td>
-        <td style="text-align:center"><b>Email</b></td>
+        <td style="text-align:center"><b>Consultorio</b></td>
+        
+        <td style="text-align:center"><b>Dia de atención</b></td>
+        <td style="text-align:center"><b>Hora inicio</b></td>
+        <td style="text-align:center"><b>Hora final</b></td>
         <td style="text-align:center"><b>Acciones</b></td>
         
       </tr>
@@ -45,7 +46,7 @@
     <tr>
       <td style="text-align:center">{{$contador++}}</td>
 
-      <td>{{$horario->nombres}} </td>
+      <td>{{$horario->doctor->nombres." ".$horario->doctor->apellido}} </td>
       <td>{{$horario->apellidos}}</td>
       <td>{{$horario->telefono}}</td>
       
