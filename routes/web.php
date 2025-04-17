@@ -101,10 +101,11 @@ Route::get('/admin/consultorios/{id}/edit', [App\Http\Controllers\ConsultorioCon
 
 
 
-Route::put('/admin/consultorios/{id}', [App\Http\Controllers\ConsultorioController::class, 'update'])->name('admin.consultorios.update')->middleware('auth');
+Route::put('/admin/consultorios/{id}', [App\Http\Controllers\ConsultorioController::class, 'update'])->name('admin.pacientes.update')->middleware('auth');
 
 Route::get('/admin/consultorios/{id}/confirm-delete', [App\Http\Controllers\ConsultorioController::class, 'confirmDelete'])->name('admin.consultorios.confirmDelete')->middleware('auth');
 
+<<<<<<< HEAD
 Route::delete('/admin/consultorios/{id}', [App\Http\Controllers\ConsultorioController::class, 'destroy'])->name('admin.consultorios.destroy')->middleware('auth');
 
 //rutas para admin- doctores
@@ -143,3 +144,6 @@ Route::put('/admin/horarios/{id}', [App\Http\Controllers\HorarioController::clas
 Route::get('/admin/horarios/{id}/confirm-delete', [App\Http\Controllers\HorarioController::class, 'confirmDelete'])->name('admin.horarios.confirmDelete')->middleware('auth');
 
 Route::delete('/admin/horarios/{id}', [App\Http\Controllers\HorarioController::class, 'destroy'])->name('admin.horarios.destroy')->middleware('auth');
+=======
+Route::delete('/admin/consultorios/{id}', [App\Http\Controllers\ConsultorioController::class, 'destroy'])->name('admin.consultorios.destroy')->middleware('auth');
+>>>>>>> parent of 9e74172 (29 octubre medicos)

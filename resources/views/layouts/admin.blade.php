@@ -187,6 +187,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
 </ul>
 
+<<<<<<< HEAD
 
 <li class="nav-item">
             <a href="#" class="nav-link active">
@@ -235,6 +236,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </ul>
 
 
+=======
+>>>>>>> parent of 9e74172 (29 octubre medicos)
           <li class="nav-item">
             <a href="#" class="nav-link" style="background-color: #a9200e">
               

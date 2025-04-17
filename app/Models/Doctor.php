@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Models;
+namespace App\User;
 
-
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+use Illuminate\Database\Eloquent\Model;
 
 class Doctor extends Model
 {
@@ -21,6 +20,6 @@ class Doctor extends Model
     }
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Usuario::class);
 }
 }
